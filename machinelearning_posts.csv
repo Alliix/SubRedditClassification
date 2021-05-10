@@ -708,7 +708,7 @@ Hydra1721,MachineLearning,1620342579.0,"Has There Been Any Follow Up Research Pa
 [https://www.theverge.com/2020/8/4/21353810/facial-recognition-block-ai-selfie-cloaking-fawkes](https://www.theverge.com/2020/8/4/21353810/facial-recognition-block-ai-selfie-cloaking-fawkes)
 
 It was stated at the time that Fawkes was VERY computationally expensive and therefore was unable to perform these modifications in real time. Since the publication, I have not read about any other research papers derived from their original work. Has there been any developments in this field of research since then and if so has anyone managed to develop a network that runs in real-time?"
-Krisztian_Endre_,MachineLearning,1620639066.0,I am looking for a Final Year Project Idea which can be done in Android [Project],"Hello, I am a second-year Informatics University student. I am looking for a Final Year Project Idea. I decided to work in Android because that is my favorite technology. The problem is that I can't find a perfect topic for this purpose. I do not want something basic but an application where it will also be necessary to conduct research."
+kaia_1527,MachineLearning,1617626377.0,[P] Basic Floor Plan Image Recognition,"Hi everyone, first-time poster. This one should be easy: is there a model that, given an image, recognizes whether the image is floor plan (typically of a residential property)? Other than a boolean, don't need anything else. Should be quick to train one, but wanted to check whether there's a generally accepted model out there. Thanks!"
 ottawalanguages,MachineLearning,1620432416.0,[D] Reinforcement Learning with R software,"Reinforcement Learning seems to be becoming a popular topic these days. Does anyone know if people are working on Reinforcement Learning problems using R? Does anyone have any links/tutorials that show Reinforcement Learning and Game Theory material being done using R software?
 
 Thanks"
@@ -732,7 +732,10 @@ I’ve also spent a lot of time optimizing the k-means clustering algorithm for 
 The project is still in an early stage, there could be bugs or performance issues, feel free to create an issue if you encounter any of those.
 
 Contributions are welcomed!"
-kaia_1527,MachineLearning,1617626377.0,[P] Basic Floor Plan Image Recognition,"Hi everyone, first-time poster. This one should be easy: is there a model that, given an image, recognizes whether the image is floor plan (typically of a residential property)? Other than a boolean, don't need anything else. Should be quick to train one, but wanted to check whether there's a generally accepted model out there. Thanks!"
+Kal217,MachineLearning,1617403979.0,[P] Intuitive StarGAN Implemented in Tensorflow 2.3,"Lately, a lot of my work has been involving StarGAN, so I wanted to create an easy to read implementation of the architecture that functions, can be freely used, and most importantly that explains what's going on!  \[StarGAN\]([https://arxiv.org/abs/1711.09020](https://arxiv.org/abs/1711.09020)) is a class translation model that uses a single generator to translate freely between some number of classes.  It is an advanced GAN, and although outdated, shares some important ideas.  My implementation documentation is aimed at those who have a familiarity with machine learning.  Please let me know any feedback you might have, this is my first time sharing a project!  
+
+
+[https://github.com/Kal213/StarGAN-Tutorial-Tensorflow-2.3](https://github.com/Kal213/StarGAN-Tutorial-Tensorflow-2.3)"
 putinwhat,MachineLearning,1618758422.0,[D] MLOps Stack,I’ve been researching the different libraries and tools available to use for experiment reproducibility and I recently implemented a few open-source tools like MLFlow for tracking and model storage as well as DVC for data versioning and pipeline generation. I was curious to know what tools have been tried by others and how they’ve worked out?
 born_in_cyberspace,MachineLearning,1618471311.0,[R][D] On the Impossibility of Supersized Machines,"Found an excellent satire about the typical arguments against artificial general intelligence, by Garfinkel et al (2017):
 
@@ -762,12 +765,8 @@ Full paper here:
 Implementation here:
 
 [https://github.com/akshaymehra24/poisoning\_certified\_defenses](https://github.com/akshaymehra24/poisoning_certified_defenses)"
-Kal217,MachineLearning,1617403979.0,[P] Intuitive StarGAN Implemented in Tensorflow 2.3,"Lately, a lot of my work has been involving StarGAN, so I wanted to create an easy to read implementation of the architecture that functions, can be freely used, and most importantly that explains what's going on!  \[StarGAN\]([https://arxiv.org/abs/1711.09020](https://arxiv.org/abs/1711.09020)) is a class translation model that uses a single generator to translate freely between some number of classes.  It is an advanced GAN, and although outdated, shares some important ideas.  My implementation documentation is aimed at those who have a familiarity with machine learning.  Please let me know any feedback you might have, this is my first time sharing a project!  
-
-
-[https://github.com/Kal213/StarGAN-Tutorial-Tensorflow-2.3](https://github.com/Kal213/StarGAN-Tutorial-Tensorflow-2.3)"
-TheCockatoo,MachineLearning,1618916138.0,[D] Arguments for supervised approach when an unsupervised one already exists?,"Assume a niche topic that has received little attention in terms of machine / deep learning papers. There's only one, but it does *unsupervised* deep learning. I'd like to propose a supervised approach, but how can I argue for it in the presence of an unsupervised one? Doesn't ""works without labels"" trump anything supervised?"
 thunder_jaxx,MachineLearning,1616434209.0,[2103.06326] S4RL: Surprisingly Simple Self-Supervision for Offline Reinforcement Learning,
+TheCockatoo,MachineLearning,1618916138.0,[D] Arguments for supervised approach when an unsupervised one already exists?,"Assume a niche topic that has received little attention in terms of machine / deep learning papers. There's only one, but it does *unsupervised* deep learning. I'd like to propose a supervised approach, but how can I argue for it in the presence of an unsupervised one? Doesn't ""works without labels"" trump anything supervised?"
 pcaversaccio,MachineLearning,1617645967.0,[R] Facebook AI: Self-supervised learning for fast and scalable time series hyper-parameter tuning,
 mcbal31,MachineLearning,1620119944.0,[P] Deep Implicit Attention: A Mean-Field Theory Perspective on Attention Mechanisms,"In this project, we model attention in terms of the collective response of a statistical-mechanical system. We consider a vector generalization of an Ising-like spin system and treat incoming data as applied magnetic fields and outputs of attention modules as spin expectation values in order to rephrase attention as an (inner-loop) fixed-point optimization.
 
@@ -1054,65 +1053,6 @@ sensetime,MachineLearning,1619065013.0,[R] Carbon Emissions and Large Neural Net
 nicolas-gervais,MachineLearning,1620053920.0,"[D] Half of my team knows Tensorflow, the other half PyTorch. How can we decide on which to use?","Sadly, the title says it all. We don't know what to use as we need to start collaborating together. All I can find online is ""Pytorch is more often used in research"" which is probably not even true anymore, since everyone says that because that's the only thing people are saying."
 SmittyMcSmitherson,MachineLearning,1617948856.0,[D] MLCommons & inference benchmarking,Why isn’t MLCommons (MLPerf) constantly adding new results? Is there a better resource for benchmark results of various inferencing ASICs?
 mistermysterioyster,MachineLearning,1616923147.0,[D] Paper Reading Group #015 - DERAIL: Diagnostic Environments for Reward And Imitation Learning. (Link to full slides in comments!),
-InvestingScientist,MachineLearning,1620645601.0,"[P] - Help me implement ""Neural Assimilation"" for my research project","Hi all,
-
-I am attempting to reproduce the Neural Assimilation model architecture described in this paper: [Neural Assimilation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7304751/). They are essentially trying to design an architecture that would be much faster than using a Kalman Filter by bypassing the correction step. Despite the authors providing some code in Keras, I have had some issues trying to implement this with PyTorch as I simply cannot see how they have built the model. (link to the code is here: [FINAL CODE - Google Drive](https://drive.google.com/drive/folders/1TBg9ZfPyXiegoXbn2sZURPjPml8TWQIO))
-
-From my understanding, we need two LSTMs with one using the model forecasted data and the other using the observational data. The tricky part is that each LSTM requires as input the hidden state and cell state from the other LSTM which I am having some difficulty trying to implement. Anyone have any ideas on how I could do this? So far I have only used simple LSTMs for many-to-many prediction.
-
-This is a diagram of the architecture:
-
-&#x200B;
-
-https://preview.redd.it/g53el69w1ay61.png?width=1176&format=png&auto=webp&s=a45c41c1d17b2e6cfcc3503d6f4644aa1dc53fd2
-
-and what I am working on thus far as its implementation:
-
-     class Neural_Assimilation(nn.Module):
-      def __init__(self, n_inputs, n_hidden, num_layers, n_outputs):
-        super(Neural_Assimilation, self).__init__()
-        self.D = n_inputs
-        self.M = n_hidden
-        self.K = n_outputs
-        self.L = num_layers
-    
-        self.rnn_f = nn.LSTM(
-            input_size=self.D,
-            hidden_size=self.M,
-            num_layers=self.L,
-            batch_first=True)
-        
-        self.rnn_o = nn.LSTM(
-            input_size=self.D,
-            hidden_size=self.M,
-            num_layers=self.L,
-            batch_first=True)
-        self.fc = nn.Linear(self.M, self.K) # For BiDir LSTM need to multiply self.M x 2
-      
-      def forward(self, X_f, X_o):
-        # initial hidden states
-        h0_f = torch.zeros(self.L, X_f.size(0), self.M).to(device) # For BiDir LSTM need to multiply self.L x 2
-        c0_f = torch.zeros(self.L, X_f.size(0), self.M).to(device) # For BiDir LSTM need to multiply self.L x 2
-    
-        # get RNN unit output
-        out_f, (h_t_f, c_t_f) = self.rnn_f(X_f, (h0_f, c0_f))
-        out_o, (h_t_o, c_t_o) = self.rnn_o(X_o, (h_t_f, c_t_f))
-        out_f, (h_t_o, c_t_o) = self.rnn_f(X_f, (h_t_o, c_t_o))
-        
-        # we want h(t) and c(t) at the final time step so we can feed this into the other RNN
-        out_f = self.fc(out_f[:, -1, :])
-    
-        hidden_state = h_t[:, -1, :]
-        hidden_out = self.fc(hidden_state)
-    
-        cell_state = c_t[:, -1, :]
-        cell_out = self.fc(cell_state)
-    
-        return out, hidden_state, cell_out 
-
-My issue is I havent been able to think of a good way to 'couple' the LSTMs so that each RNN has as input either the observation or model forecast, ***AS WELL AS the hidden and cell state of the other network***
-
-I would really appreciate your expertise!"
 PetarVelickovic,MachineLearning,1619684755.0,"[R] Geometric Deep Learning: Grids, Groups, Graphs, Geodesics and Gauges (""proto-book"" + blog + talk)","Hi everyone,
 
 I am proud to share with you the first version of a project on a geometric unification of deep learning that has kept us busy throughout COVID times (having started in February 2020).
@@ -1173,6 +1113,9 @@ Electronic-Lie4077,MachineLearning,1617117959.0,[P] OpenAI CLIP: Connecting Text
 https://reddit.com/link/mgiimg/video/qstepjl4o6q61/player
 
 web demo for open ai clip for visual classification, try it out here: [https://gradio.app/hub/AK391/CLIP](https://gradio.app/hub/AK391/CLIP)"
+prakhar21,MachineLearning,1620325388.0,[D] graph2vec: Learning Distributed Representations of Graphs | ML with Graphs (Paper Walkthrough),"Recent works on representation learning for graph structured data predominantly focus on learning distributed representations of graph substructures such as nodes and subgraphs. graph2vec proposes a technique to embed entire graph in high dimension vector space. It is inspired from doc2vec learning approach over graphs and rooted subgraphs.
+
+Paper Walkthrough: https://youtu.be/h400_OMWNLo"
 TartarQ,MachineLearning,1620576418.0,[Discussion] Defining optimal false-positives and false-negatives balance with a cost function,"\#roc\_curve  
 
 https://preview.redd.it/80m5ee9yb4y61.png?width=1382&format=png&auto=webp&s=79aa05882369f6e1e2449679e062ae3c26634aed
@@ -1184,9 +1127,6 @@ https://preview.redd.it/sheqqo2zb4y61.png?width=1548&format=png&auto=webp&s=e990
 &#x200B;
 
 https://preview.redd.it/qifab1rzb4y61.png?width=932&format=png&auto=webp&s=4c2ae6f5f80a014ac60d0def347e6d333618de80"
-prakhar21,MachineLearning,1620325388.0,[D] graph2vec: Learning Distributed Representations of Graphs | ML with Graphs (Paper Walkthrough),"Recent works on representation learning for graph structured data predominantly focus on learning distributed representations of graph substructures such as nodes and subgraphs. graph2vec proposes a technique to embed entire graph in high dimension vector space. It is inspired from doc2vec learning approach over graphs and rooted subgraphs.
-
-Paper Walkthrough: https://youtu.be/h400_OMWNLo"
 False-Grape7566,MachineLearning,1620578000.0,[P] Keytotext Convert Keywords to Large texts,"Hello, Presenting Keytotext: Keytotext is an NLP model that can convert keywords to sentences and larger texts. It is built using the T5 model. Keytotext has a PyPI installation and on-demand inference API too. It also features a UI built using streamlit and a GPU-enabled colab notebook for easy usage! Please do check it out on GitHub: [https://github.com/gagan3012/keytotext](https://github.com/gagan3012/keytotext) Please to star 📷 if you liked the work!"
 CC_sciguy,MachineLearning,1618532149.0,[D] Anyone have experience running pytorch with AMD GPUs,"In March pytorch mainstreamed ROCm support meaning that AMD GPUs could be viable for DL workflows. I have seen some compelling benchmarks for AMD mi100 GPUs, but nothing that does end-to-end tests on real deep learning workflows.
 
@@ -4136,7 +4076,6 @@ This [subredit](https://www.reddit.com/r/MachineLearning/comments/r6i99/proper_m
 &#x200B;
 
 Thanks!"
-thisisdhruvagarwal,MachineLearning,1620638455.0,Can we use PPO in a multi-action task? [D],"Can we use PPO in a multi-action task? Like, there will be 2 output layers, first one will specify whether we have to move left or right and the second one will specify whether we have to shoot or not.. Both Layers will have 2 output neurons with softmax activation function in it. So, can we use PPO for this task? If yes, then how? What will the actor loss be now?"
 JEUNGHWAN,MachineLearning,1620611903.0,[P] AI Kant is willing to be ghostwriter only for you,"Hi, There! I dreamed of someone who writes a Philosophy essay in place of me when I majored in Philosophy. So I came up with the idea that I trained GPT-2 with ‘The Critique of Pure Reason’ of Kant and Kant becomes Ghostwriter and does write Kantian essay in place of students.
 
 The project called Teachable NLP.
@@ -4812,19 +4751,15 @@ Especially, if we focus on feature selection of the bands on the spectra that co
 Keywords:  
 
 signal processing; near-infrared; machine learning; artificial neural networks; support vector machines; k-nearest neighbour; Naïve Bayes; random forest; ensemble models; evolutionary computation; explainable artificial intelligence; ensemble methods; deep learning; feature extraction; Principal Component Analysis (PCA); food security; material analysis; drug identification; medical diagnosis; vet diagnosis; Internet of things (IoT)"
-ml_abler,MachineLearning,1620639883.0,[D] ML and Quantum Computing," 
+ml_abler,MachineLearning,1620639883.0,[D] ML and Quantum Computing,"Hi reddit,
 
-Hi reddit,
-
-I am not entirely sure if this is the right place to ask this but here I go.  
-I recently got an opportunity to work in quantum computing team. The entire purpose of the team is to find applications of quantum computing in our firm. It sounds like an amazing opportunity but I am having a lot of reservations. Would love and appreciate your insights.
+I am not entirely sure if this is the right place to ask this but here I go.I recently got an opportunity to work in quantum computing team. The entire purpose of the team is to find applications of quantum computing in our firm. It sounds like an amazing opportunity but I am having a lot of reservations. Would love and appreciate your insights.
 
 I come from an CS engineering background with a masters in AI/ML, my full time position at the moment is that of a data scientist working on clustering models. The quantum computing opportunity is available due to formation of a new team which has a lot of vacancies at the moment.
 
 Although the prospects of Quantum AI/ML sounds hella interesting(although very niche), quantum computing itself seems like an extreme departure from my formal education with its heavy emphasis in physics. This is making me anxious
 
-How viable is this opportunity for my career? How are the job prospects in the domain ( for someone with my background)? Would it help me creating a niche for myself in data science ?  
-I can admit shamelessly that I'd like a career which pays the big bucks at the same time keep me interested enough.
+How viable is this opportunity for my career? How are the job prospects in the domain ( for someone with my background)? Would it help me in creating a niche for myself in data science ?I can admit shamelessly that I'd like a career which pays the big bucks at the same time keep me interested enough.
 
 Would love your opinions"
 MrAcurite,MachineLearning,1617202567.0,[D] Does anyone care about the quality of the prose in academic papers?,"I've been reading a lot of great literary works lately, and when I go back to reading academic papers, there is a very noticeable downgrade in the quality of the language employed. And I guess that that makes sense; when you want to communicate technical information, there's not a lot of room or reason to employ metaphors or colorful language.
@@ -4919,17 +4854,6 @@ It doesn't go into how any of these concepts were actually applied (technologies
 I've played around with the data a bit already in notebooks, leaflet, arcQGIS but i'm having a bit of an issue with wrapping my head around how an entire workflow for this project could work since I want to go from mapping raw data points to then mapping key points identified through an analysis of those points.
 
 Any insights would be greatly appreciated!"
-Ekkolo,MachineLearning,1620631488.0,[D] NER for Resume Parsing," 
-
-Hello,
-
-I need to do resume parsing with French resumes. I will use Prodigy ([prodi.gy](https://prodi.gy/)) to annotate my dataset and make my model.
-
-My question is : is it better to annotate with the full resume or annotate line by line  ,
-
-for me, the position of the text in the full document is an information but maybe spacy don't care.
-
-Thanks !"
 Acrobatic-Egg-,MachineLearning,1619433901.0,[D] The Journey Of Problem-Solving Using Analytics," 
 
 In my \~6 years of working in the analytics domain, for most of the Fortune 10 clients, across geographies, one thing I've realized is while people may solve business problems using analytics, the journey is lost somewhere. At the risk of sounding cliche, ***'Enjoy the journey, not the destination"".*** So here's my attempt at creating the problem-solving journey from what I've experienced/learned/failed at.
@@ -4951,11 +4875,11 @@ This is where you will use all your story-boarding experience to actually tell t
 Only when someone understands your story, are they most likely going to purchase another book from you. Only when you make the journey beautiful and meaningful for your fellow passengers and stakeholders, will they travel with you again.
 
 With that said, I've reached my destination. I hope you all do too. I'm totally open to criticism/suggestions/improvements that I can make to this journey. Looking forward to inputs from the community!"
+hardmaru,MachineLearning,1618498632.0,[R] Meta-Learning Bidirectional Update Rules. A new type of generalized neural net where neurons and synapses maintain multiple states. They show that backprop in classical neural nets can be seen as a special case of a two-state net where one state is used for activations and another for gradients.,
 SimlaBurcu,MachineLearning,1619032775.0,[P] ColTraIn Hybrid Block Floating-Point (HBFP) Training Emulator,"We are excited to announce the release of the [ColTraIn HBFP Training Emulator](https://github.com/parsa-epfl/HBFPEmulator).
 
 [HBFP](https://papers.nips.cc/paper/2018/file/6a9aeddfc689c1d0e3b9ccc3ab651bc5-Paper.pdf) offers the **accuracy** of   32-bit floating-point with the numeric and silicon density of 8-bit   fixed-point for a wide variety of models (ResNet, WideResNet, DenseNet,   AlexNet, LSTM, and BERT). We foresee HBFP laying the foundation for   accurate training algorithms running on accelerators with an order of   magnitude denser arithmetic than conventional or novel floating-point   based platforms. The ColTraIn emulator repository includes several   example DNN models including CNNs, LSTMs and BERT for both HBFP and a   reference FP32 baseline.  
 Check out the ColTraIn emulator at [https://github.com/parsa-epfl/HBFPEmulator](https://github.com/parsa-epfl/HBFPEmulator) or visit our website at [https://parsa.epfl.ch/coltrain/](https://parsa.epfl.ch/coltrain/) for more information!"
-hardmaru,MachineLearning,1618498632.0,[R] Meta-Learning Bidirectional Update Rules. A new type of generalized neural net where neurons and synapses maintain multiple states. They show that backprop in classical neural nets can be seen as a special case of a two-state net where one state is used for activations and another for gradients.,
 Svito-zar,MachineLearning,1617024327.0,[D] Is anyone using Automatic Bug Fixing Tools for Python?,"Many of us are making bugs. Some more often than other. I am one of those :) 
 
 After just fixing a bug which was there for several month and screwed up many of my experiments, I wonder: can't ML find bugs for me?
@@ -6647,15 +6571,6 @@ Summary: [https://www.marktechpost.com/2021/04/05/researchers-from-the-universit
 
 Paper: https://arxiv.org/pdf/2010.00672.pdf"
 koolaidman123,MachineLearning,1619518931.0,Visformer: The Vision-friendly Transformer,
-yusuf-bengio,MachineLearning,1620636756.0,[D] Recent MLP-only architectures plagiarize Jürgen Schmidhuber,"His group was the first to show that a simple MLP architecture can achieve state-of-the-art performance on computer vision benchmarks given strong enough data augmentation \[1,2\]. Moreover, his works pioneered the use of *committees* i.e., a technique now re-popularized under the term ""*mixture-of-experts*"".
-
-However, in all the recent fuzz about MLP-only architectures his fundamental contributions are not even worth a single sentence. He is simply being cancelled. 
-
-&#x200B;
-
-\[1\] *Better digit recognition with a committee of simple Neural Nets.* Meier, Cires,  Gambardella and Schmidhuber 2011 [\[PDF\]](https://people.idsia.ch//~juergen/icdar2011b.pdf)
-
-\[2\] *Handwritten Digit Recognition with a Committee of DeepNeural Nets on GPUs.* Cirȩsan, Meier, Gambardella and Schmidhuber 2011 [\[PDF\]](https://arxiv.org/pdf/1103.4487.pdf)"
 NeitherBandicoot,MachineLearning,1616955264.0,[D] Why some major papers in ML aren't peer-reviewed?,"I'm a little bit of an outsider (coming from a life science field) and I noticed that some major publications in the field of ML aren't peer-reviewed, which strikes me as very unusual given that in my field a paper that is not peer-reviewed is as good as a blog post. I understand the need to publish asap because research in the field is moving so fast, but preprints exists for that, so that shouldn't be the reason why.  Could somebody explain to me why peer-review doesn't appear to be prioritized in ML research?  I'm not trying to criticize the way it works, I'm just puzzled and confused because it's not what I'm used to see.
 
 
@@ -9380,9 +9295,6 @@ post_hazanko,MachineLearning,1618592038.0,[D] Filling in missing data for bad vi
 So I'm wondering if there would be a thing at some point where they integrate a ""model"" on the client side think Web/JS for video transmission... usually what you see is the local/source is crisp and the recipient is a little worse, makes sense.
 
 Concern is how accurate the fill is."
-Brian-Phan,MachineLearning,1620645877.0,[D] Is a Master (Msc) in Statistics a good path towards machine learning?,"Hi guys. I’m in my last undergrad year of Finance and I have a keen interest in Machine Learning, so I’m considering taking a master degree in Statistics since my research shows that ML requires a ton of statistics background. However, idk whether a master in Statistics will be optimal as compared to CS or AI since there are people saying a master in Statistics covers too much knowledge that is not needed and CS/AI are much more practical.
-
-Thanks so much in advance for all of your input. I really appreciate it."
 thunder_jaxx,MachineLearning,1617344522.0,"[D] For Anyone Who Has Clocked More Than 50+ Days Of DL Model Training Time, Do You Use Anything Other Than Adam or AdamW?","For almost All ML projects which had DL, I used AdamW and it just worked. So fucking well. So a few questions to fellow Redditors who might be training models frequently :
 
 Do you use a different optimizer? Why?  
@@ -9431,9 +9343,6 @@ Perhaps we need better ways to host datasets like this.
 
 The dataset just went back online."
 mistermysterioyster,MachineLearning,1616330212.0,[D] Paper Reading Group #014 - Accurate uncertainties for deep learning using calibrated regression.,
-AlexCroft-n-Co,MachineLearning,1620629854.0,"[D] New to reddit. Delete or reddit?? Have deleted facebook, instagram and everything else. Your votes matters","Privacy concerns
-
-[View Poll](https://www.reddit.com/poll/n8y4jz)"
 dsmlthrowaway,MachineLearning,1617121603.0,[D] Looking for advice: hiring data practitioners,"I work for a large company focused on supply chain. Medium cost of living city. We are starting to incorporate machine learning techniques to improve a lot of our processes. We've had good success and the goal of ""cushioning the blow of investment"" has been met.
 
 So now we're looking to invest in scaling out this team (hiring maybe 3-5 additional people). The rub of the matter is: I'm not really sure how to attract the right talent for the job. We do not need cutting edge stuff. For most business problems, the value is immense if we can get something ""good enough"" out of the door. Pragmatic, but in between 'hacker' and 'enterprise.'
