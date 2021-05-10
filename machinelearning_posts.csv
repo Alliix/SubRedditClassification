@@ -1054,6 +1054,65 @@ sensetime,MachineLearning,1619065013.0,[R] Carbon Emissions and Large Neural Net
 nicolas-gervais,MachineLearning,1620053920.0,"[D] Half of my team knows Tensorflow, the other half PyTorch. How can we decide on which to use?","Sadly, the title says it all. We don't know what to use as we need to start collaborating together. All I can find online is ""Pytorch is more often used in research"" which is probably not even true anymore, since everyone says that because that's the only thing people are saying."
 SmittyMcSmitherson,MachineLearning,1617948856.0,[D] MLCommons & inference benchmarking,Why isn’t MLCommons (MLPerf) constantly adding new results? Is there a better resource for benchmark results of various inferencing ASICs?
 mistermysterioyster,MachineLearning,1616923147.0,[D] Paper Reading Group #015 - DERAIL: Diagnostic Environments for Reward And Imitation Learning. (Link to full slides in comments!),
+InvestingScientist,MachineLearning,1620645601.0,"[P] - Help me implement ""Neural Assimilation"" for my research project","Hi all,
+
+I am attempting to reproduce the Neural Assimilation model architecture described in this paper: [Neural Assimilation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7304751/). They are essentially trying to design an architecture that would be much faster than using a Kalman Filter by bypassing the correction step. Despite the authors providing some code in Keras, I have had some issues trying to implement this with PyTorch as I simply cannot see how they have built the model. (link to the code is here: [FINAL CODE - Google Drive](https://drive.google.com/drive/folders/1TBg9ZfPyXiegoXbn2sZURPjPml8TWQIO))
+
+From my understanding, we need two LSTMs with one using the model forecasted data and the other using the observational data. The tricky part is that each LSTM requires as input the hidden state and cell state from the other LSTM which I am having some difficulty trying to implement. Anyone have any ideas on how I could do this? So far I have only used simple LSTMs for many-to-many prediction.
+
+This is a diagram of the architecture:
+
+&#x200B;
+
+https://preview.redd.it/g53el69w1ay61.png?width=1176&format=png&auto=webp&s=a45c41c1d17b2e6cfcc3503d6f4644aa1dc53fd2
+
+and what I am working on thus far as its implementation:
+
+     class Neural_Assimilation(nn.Module):
+      def __init__(self, n_inputs, n_hidden, num_layers, n_outputs):
+        super(Neural_Assimilation, self).__init__()
+        self.D = n_inputs
+        self.M = n_hidden
+        self.K = n_outputs
+        self.L = num_layers
+    
+        self.rnn_f = nn.LSTM(
+            input_size=self.D,
+            hidden_size=self.M,
+            num_layers=self.L,
+            batch_first=True)
+        
+        self.rnn_o = nn.LSTM(
+            input_size=self.D,
+            hidden_size=self.M,
+            num_layers=self.L,
+            batch_first=True)
+        self.fc = nn.Linear(self.M, self.K) # For BiDir LSTM need to multiply self.M x 2
+      
+      def forward(self, X_f, X_o):
+        # initial hidden states
+        h0_f = torch.zeros(self.L, X_f.size(0), self.M).to(device) # For BiDir LSTM need to multiply self.L x 2
+        c0_f = torch.zeros(self.L, X_f.size(0), self.M).to(device) # For BiDir LSTM need to multiply self.L x 2
+    
+        # get RNN unit output
+        out_f, (h_t_f, c_t_f) = self.rnn_f(X_f, (h0_f, c0_f))
+        out_o, (h_t_o, c_t_o) = self.rnn_o(X_o, (h_t_f, c_t_f))
+        out_f, (h_t_o, c_t_o) = self.rnn_f(X_f, (h_t_o, c_t_o))
+        
+        # we want h(t) and c(t) at the final time step so we can feed this into the other RNN
+        out_f = self.fc(out_f[:, -1, :])
+    
+        hidden_state = h_t[:, -1, :]
+        hidden_out = self.fc(hidden_state)
+    
+        cell_state = c_t[:, -1, :]
+        cell_out = self.fc(cell_state)
+    
+        return out, hidden_state, cell_out 
+
+My issue is I havent been able to think of a good way to 'couple' the LSTMs so that each RNN has as input either the observation or model forecast, ***AS WELL AS the hidden and cell state of the other network***
+
+I would really appreciate your expertise!"
 PetarVelickovic,MachineLearning,1619684755.0,"[R] Geometric Deep Learning: Grids, Groups, Graphs, Geodesics and Gauges (""proto-book"" + blog + talk)","Hi everyone,
 
 I am proud to share with you the first version of a project on a geometric unification of deep learning that has kept us busy throughout COVID times (having started in February 2020).
@@ -1532,8 +1591,6 @@ huseinzol05,MachineLearning,1618732918.0,"[P] Malaya-Speech, Speech-Toolkit libr
 Check latest documentation at https://malaya-speech.readthedocs.io/
 
 Check github repository at https://github.com/huseinzol05/malaya-speech"
-PaganPasta,MachineLearning,1616313712.0,[D] ICML pre-lim reviews are out.,"Pre-liminary(can also be interpreted as final depending on your reviewers) reviews for ICML are coming out today. 
-Creating a discussion thread cause I don't already see one."
 marksteve4,MachineLearning,1617752955.0,[D] state of art for Speaker Diarization?," I've tried [Resemblyzer's](https://github.com/resemble-ai/Resemblyzer) method, yet it always either cut out too much of his voice, or included too much of others. It also required that i have a clip of him talking, and the quality of that clip heavily impacted its performance."
 malia912,MachineLearning,1620140015.0,YOLOV5 with a second stage classifier [D],"[D]
 Hello everyone. This is a question regarding YOLOV5 In detect.py module I saw a second stage classifier but it is set to false.
@@ -2834,9 +2891,6 @@ ByteHubAi,MachineLearning,1617650022.0,[P] ByteHub: simple timeseries data prepa
 
 For a bit more background I've [written some more](https://medium.com/bytehub-ai/making-feature-stores-simple-3ae0d0dcac30) about why we built it. In summary we want to help data scientists save time when building machine-learning models with something that is simple to use - i.e. compatible with Jupyter notebooks and with no complex infrastructure to setup and manage. I'd appreciate feedback from anyone interested in checking it out!"
 gospodin_dan,MachineLearning,1619896827.0,[N] Fresh paper: Detecting objects in images by describing them with keywords 🔥,
-jeongdoowon,MachineLearning,1616305744.0,[D]What is the hardest part in computer vision project at company?,"Hello, I am working as a computer vision engineer at a medical AI company. Though, most of my time is spent to find the best thesis that I can use for my dataset and try it, and see how good the accuracy is. If the accuracy is not good enough, the time I spent for it got fruitless after all. This is the toughest part of my work routine.
-
-What do other computer vision engineers think the hardest part is in their project?"
 evanatyourservice,MachineLearning,1618239686.0,[2102.11600] ASAM: Adaptive Sharpness-Aware Minimization for Scale-Invariant Learning of Deep Neural Networks,
 ilikepancakez,MachineLearning,1620598303.0,Open Catalyst 2020 (OC20) Dataset and Community Challenges [R],
 dev_bes,MachineLearning,1618317666.0,[R][P]MobileStyleGAN: A Lightweight Convolutional Neural Network for High-Fidelity Image Synthesis,"In recent years, the use of Generative Adversarial Networks (GANs) has become very popular in generative image modeling. While style-based GAN architectures yield state-of-the-art results in high-fidelity image synthesis, computationally, they are highly complex. In our work, we focus on the performance optimization of style-based generative models. We analyze the most computationally hard parts of StyleGAN2, and propose changes in the generator network to make it possible to deploy style-based generative networks in the edge devices. We introduce MobileStyleGAN architecture, which has x3.5 fewer parameters and is x9.5 less computationally complex than StyleGAN2, while providing comparable quality.
@@ -9326,6 +9380,9 @@ post_hazanko,MachineLearning,1618592038.0,[D] Filling in missing data for bad vi
 So I'm wondering if there would be a thing at some point where they integrate a ""model"" on the client side think Web/JS for video transmission... usually what you see is the local/source is crisp and the recipient is a little worse, makes sense.
 
 Concern is how accurate the fill is."
+Brian-Phan,MachineLearning,1620645877.0,[D] Is a Master (Msc) in Statistics a good path towards machine learning?,"Hi guys. I’m in my last undergrad year of Finance and I have a keen interest in Machine Learning, so I’m considering taking a master degree in Statistics since my research shows that ML requires a ton of statistics background. However, idk whether a master in Statistics will be optimal as compared to CS or AI since there are people saying a master in Statistics covers too much knowledge that is not needed and CS/AI are much more practical.
+
+Thanks so much in advance for all of your input. I really appreciate it."
 thunder_jaxx,MachineLearning,1617344522.0,"[D] For Anyone Who Has Clocked More Than 50+ Days Of DL Model Training Time, Do You Use Anything Other Than Adam or AdamW?","For almost All ML projects which had DL, I used AdamW and it just worked. So fucking well. So a few questions to fellow Redditors who might be training models frequently :
 
 Do you use a different optimizer? Why?  
