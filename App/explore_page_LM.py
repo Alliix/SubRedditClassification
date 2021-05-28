@@ -4,17 +4,14 @@ import pandas as pd
 import nltk
 from nltk.tokenize import word_tokenize
 nltk.download('webtext')
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
-from sklearn import model_selection
-
+from sklearn.metrics import classification_report, confusion_matrix
 
 
 def find_features_LM(post):
     words = word_tokenize(post)
     features = {}
     
-    with open('./WordNetLemmatizer/word_features.data', 'rb') as filehandle:
+    with open('./../WordNetLemmatizer/word_features.data', 'rb') as filehandle:
         # read the data as binary data stream
         word_features = pickle.load(filehandle)
     
@@ -23,14 +20,18 @@ def find_features_LM(post):
     return features
 
 def show_explore_page_LM():
+
+# 
+# Subreddit Classifier
+# 
+
     st.title("Explore model Using WordNetLemmatizer")
-    loaded_model = pickle.load(open('./WordNetLemmatizer/Models/finalized_model_subreddits.sav', 'rb'))
+    loaded_model = pickle.load(open('./../WordNetLemmatizer/Models/finalized_model_subreddits.sav', 'rb'))
     
-    allPosts = pd.read_csv('./WordNetLemmatizer/all_posts_processed.csv')
-    posts_all = list(zip(allPosts.loc[:,"Post_Parsed"].values,allPosts.loc[:,"Subreddit_Code"].values))
-    featuresets = [(find_features_LM(str(text)), label) for (text, label) in posts_all]
-    seed = 1
-    training, testing = model_selection.train_test_split(featuresets, test_size = 0.25, random_state=seed)
+    # read saved testing data
+    with open('./../WordNetLemmatizer/Models/testing_subreddits.data', 'rb') as filehandle:
+        testing = pickle.load(filehandle)
+
     txt_features, labels = list(zip(*testing))
     
     accuracy = nltk.classify.accuracy(loaded_model, testing)*100
@@ -47,16 +48,15 @@ def show_explore_page_LM():
     st.dataframe(cm)
 
     # 
-    # 
+    # Is r/depression Classifier
     # 
 
-    loaded_model = pickle.load(open('./WordNetLemmatizer/Models/finalized_model_is_depression.sav', 'rb'))
+    loaded_model = pickle.load(open('./../WordNetLemmatizer/Models/finalized_model_is_depression.sav', 'rb'))
     
-    allPosts = pd.read_csv('./WordNetLemmatizer/all_posts_processed.csv')
-    posts_all = list(zip(allPosts.loc[:,"Post_Parsed"].values,allPosts.loc[:,"Is_Depression_Code"].values))
-    featuresets = [(find_features_LM(str(text)), label) for (text, label) in posts_all]
-    seed = 1
-    training, testing = model_selection.train_test_split(featuresets, test_size = 0.25, random_state=seed)
+    # read saved testing data
+    with open('./../WordNetLemmatizer/Models/testing_depression.data', 'rb') as filehandle:
+        testing = pickle.load(filehandle)
+
     txt_features, labels = list(zip(*testing))
 
     accuracy = nltk.classify.accuracy(loaded_model, testing)*100

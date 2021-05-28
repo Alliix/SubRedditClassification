@@ -1,13 +1,6 @@
 import streamlit as st
-import pickle
 import pandas as pd
-import re
 import nltk
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import train_test_split
-from sklearn.feature_selection import chi2
 import numpy as np
 from nltk.tokenize import word_tokenize
 from wordcloud import WordCloud
@@ -15,6 +8,8 @@ import matplotlib.pyplot as plt
 nltk.download('webtext')
 import matplotlib.pyplot as plt
 
+
+# word frequency extractor from posts
 def getWordFrequency(processedPostOutputFile):
     posts = pd.read_csv(processedPostOutputFile)
 
@@ -34,14 +29,12 @@ def getWordFrequency(processedPostOutputFile):
     
     return all_words
 
-
-
 def show_explore_page_subreddits():
     st.title("Explore Subreddits")
-    subreddits = [{'title': 'r/depression', 'file': './WordNetLemmatizer/depression_posts_processed.csv'},
-    {'title': 'r/lonely', 'file': './WordNetLemmatizer/lonely_posts_processed.csv'},
-    {'title': 'r/unpopularopinion', 'file': './WordNetLemmatizer/unpopularopinion_posts_processed.csv'},
-    {'title': 'r/MachineLearning', 'file': './WordNetLemmatizer/machinelearning_posts_processed.csv'}]
+    subreddits = [{'title': 'r/depression', 'file': './../WordNetLemmatizer/SubredditInfo/depression_posts_processed.csv'},
+    {'title': 'r/lonely', 'file': './../WordNetLemmatizer/SubredditInfo/lonely_posts_processed.csv'},
+    {'title': 'r/unpopularopinion', 'file': './../WordNetLemmatizer/SubredditInfo/unpopularopinion_posts_processed.csv'},
+    {'title': 'r/MachineLearning', 'file': './../WordNetLemmatizer/SubredditInfo/machinelearning_posts_processed.csv'}]
 
     for subreddit in subreddits:
         st.header(subreddit['title'])

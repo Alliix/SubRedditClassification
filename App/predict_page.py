@@ -10,24 +10,24 @@ from nltk.stem import WordNetLemmatizer
 # 
 
 def cleanStemPost(post):
-    posessivePronouns = re.compile(r"'s")
+    urls = re.compile(r'(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})')
+    numbers = re.compile(r'\d+(\.\d+)?')
+    posessivePronouns = re.compile(r"’s")
     apostrophe=re.compile(r"’")
     someSigns =re.compile(r"\\n|\\r")
-    urls = re.compile(r'(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})')
-    numbers = re.compile(r' \d+(\.\d+)? ')
     punctuation = re.compile(r"[^\w\s]")
     whitespaces = re.compile(r'\s+')
     leadTrailWhitespace = re.compile(r'^\s+|\s+?$')
-
+    
     cleanPost = post.lower()
+    cleanPost = urls.sub('url',cleanPost)
+    cleanPost = numbers.sub('nmbr',cleanPost)
     cleanPost = posessivePronouns.sub('',cleanPost)
     cleanPost = apostrophe.sub('',cleanPost)
     cleanPost = someSigns.sub('',cleanPost)
-    cleanPost = urls.sub(' url ',cleanPost)
-    cleanPost = numbers.sub(' nmbr ',cleanPost)
     cleanPost = punctuation.sub(' ',cleanPost)
     cleanPost = whitespaces.sub(' ',cleanPost)
-    cleanPost = leadTrailWhitespace.sub(' ',cleanPost)
+    cleanPost = leadTrailWhitespace.sub('',cleanPost)
     
     ps = nltk.PorterStemmer()
     
@@ -46,7 +46,7 @@ def cleanStemPost(post):
     cleanPost = stemmed_post
     
     # stop words
-    with open('./stopwords_no_punct.data', 'rb') as filehandle:
+    with open('./../stop_words_no_punct.data', 'rb') as filehandle:
         # read the data as binary data stream
         stop_words_no_punct = pickle.load(filehandle)
         
@@ -64,7 +64,8 @@ def find_features_PS(post):
     words = word_tokenize(post)
     features = {}
     
-    with open('./PorterStemmer/word_features.data', 'rb') as filehandle:
+    #read generated features for PS
+    with open('./../PorterStemmer/word_features.data', 'rb') as filehandle:
         # read the data as binary data stream
         word_features = pickle.load(filehandle)
     
@@ -89,7 +90,7 @@ def transformDepression(x):
     return switcher.get(x)
 
 def classifySubreddit_PS(post):
-    modelFile = './PorterStemmer/Models/finalized_model_subreddits.sav'
+    modelFile = './../PorterStemmer/Models/finalized_model_subreddits.sav'
     post = cleanStemPost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -101,7 +102,7 @@ def classifySubreddit_PS(post):
     return transformSubreddit(result)
 
 def classifyDepression_PS(post):
-    modelFile = './PorterStemmer/Models/finalized_model_is_depression.sav'
+    modelFile = './../PorterStemmer/Models/finalized_model_is_depression.sav'
     post = cleanStemPost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -117,24 +118,24 @@ def classifyDepression_PS(post):
 # 
 
 def cleanLemmatizePost(post):
-    posessivePronouns = re.compile(r"'s")
+    urls = re.compile(r'(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})')
+    numbers = re.compile(r'\d+(\.\d+)?')
+    posessivePronouns = re.compile(r"’s")
     apostrophe=re.compile(r"’")
     someSigns =re.compile(r"\\n|\\r")
-    urls = re.compile(r'(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})')
-    numbers = re.compile(r' \d+(\.\d+)? ')
     punctuation = re.compile(r"[^\w\s]")
     whitespaces = re.compile(r'\s+')
     leadTrailWhitespace = re.compile(r'^\s+|\s+?$')
-
+    
     cleanPost = post.lower()
+    cleanPost = urls.sub('url',cleanPost)
+    cleanPost = numbers.sub('nmbr',cleanPost)
     cleanPost = posessivePronouns.sub('',cleanPost)
     cleanPost = apostrophe.sub('',cleanPost)
     cleanPost = someSigns.sub('',cleanPost)
-    cleanPost = urls.sub(' url ',cleanPost)
-    cleanPost = numbers.sub(' nmbr ',cleanPost)
     cleanPost = punctuation.sub(' ',cleanPost)
     cleanPost = whitespaces.sub(' ',cleanPost)
-    cleanPost = leadTrailWhitespace.sub(' ',cleanPost)
+    cleanPost = leadTrailWhitespace.sub('',cleanPost)
     
     wordnet_lemmatizer = WordNetLemmatizer()
     
@@ -153,7 +154,7 @@ def cleanLemmatizePost(post):
     cleanPost = lemmatized_post
     
     # stop words
-    with open('./stopwords_no_punct.data', 'rb') as filehandle:
+    with open('./../stop_words_no_punct.data', 'rb') as filehandle:
         # read the data as binary data stream
         stop_words_no_punct = pickle.load(filehandle)
         
@@ -171,7 +172,8 @@ def find_features_LM(post):
     words = word_tokenize(post)
     features = {}
     
-    with open('./WordNetLemmatizer/word_features.data', 'rb') as filehandle:
+    #read generated features for Lemmatizer
+    with open('./../WordNetLemmatizer/word_features.data', 'rb') as filehandle:
         # read the data as binary data stream
         word_features = pickle.load(filehandle)
     
@@ -180,7 +182,7 @@ def find_features_LM(post):
     return features
 
 def classifySubreddit_LM(post):
-    modelFile = './WordNetLemmatizer/Models/finalized_model_subreddits.sav'
+    modelFile = './../WordNetLemmatizer/Models/finalized_model_subreddits.sav'
     post = cleanLemmatizePost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -192,7 +194,7 @@ def classifySubreddit_LM(post):
     return transformSubreddit(result)
 
 def classifyDepression_LM(post):
-    modelFile = './WordNetLemmatizer/Models/finalized_model_is_depression.sav'
+    modelFile = './../WordNetLemmatizer/Models/finalized_model_is_depression.sav'
     post = cleanLemmatizePost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -218,12 +220,12 @@ def show_predict_page():
         depressionResult_PS = classifyDepression_PS(post)
 
         st.header('Using Porter Stemmer:')
-        st.subheader('Post is likely from '+ classifyResult_PS)
-        st.subheader('Post is likely '+ depressionResult_PS)
+        st.subheader('Subreddit classifier: Post is likely from '+ classifyResult_PS)
+        st.subheader('Is r/depression post: Post is likely '+ depressionResult_PS)
 
         classifyResult_LM = classifySubreddit_LM(post)
         depressionResult_LM = classifyDepression_LM(post)
 
         st.header('Using WordNetLemmatizer:')
-        st.subheader('Post is likely from '+ classifyResult_LM)
-        st.subheader('Post is likely '+ depressionResult_LM)
+        st.subheader('Subreddit classifier: Post is likely from '+ classifyResult_LM)
+        st.subheader('Is r/depression post: Post is likely '+ depressionResult_LM)

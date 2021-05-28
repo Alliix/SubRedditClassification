@@ -4,16 +4,14 @@ import pandas as pd
 import nltk
 from nltk.tokenize import word_tokenize
 nltk.download('webtext')
-from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
-from sklearn import model_selection
-
+from sklearn.metrics import classification_report, confusion_matrix
 
 
 def find_features_PS(post):
     words = word_tokenize(post)
     features = {}
     
-    with open('./PorterStemmer/word_features.data', 'rb') as filehandle:
+    with open('./../PorterStemmer/word_features.data', 'rb') as filehandle:
         # read the data as binary data stream
         word_features = pickle.load(filehandle)
     
@@ -22,20 +20,24 @@ def find_features_PS(post):
     return features
 
 def show_explore_page_PS():
-    st.title("Explore model using Porter Stemmer")
-    loaded_model = pickle.load(open('./PorterStemmer/Models/finalized_model_subreddits.sav', 'rb'))
-
-    allPosts = pd.read_csv('./PorterStemmer/all_posts_processed.csv')
-    posts_all = list(zip(allPosts.loc[:,"Post_Parsed"].values,allPosts.loc[:,"Subreddit_Code"].values))
-    featuresets = [(find_features_PS(str(text)), label) for (text, label) in posts_all]
-    seed = 1
-    training, testing = model_selection.train_test_split(featuresets, test_size = 0.25, random_state=seed)
-    txt_features, labels = list(zip(*testing))
     
+# 
+# Subreddits classifier
+# 
+    st.title("Explore model using Porter Stemmer")
+    loaded_model = pickle.load(open('./../PorterStemmer/Models/finalized_model_subreddits.sav', 'rb'))
+
+    # read saved testing data
+    with open('./../PorterStemmer/Models/testing_subreddits.data', 'rb') as filehandle:
+        testing = pickle.load(filehandle)
+    
+    txt_features, labels = list(zip(*testing))
+
     accuracy = nltk.classify.accuracy(loaded_model, testing)*100
     st.subheader("Subreddit Voting Classifier: Accuracy: {}".format(accuracy))
 
     prediction = loaded_model.classify_many(txt_features)
+
     report = classification_report(labels, prediction)
     st.write(report)
 
@@ -46,16 +48,14 @@ def show_explore_page_PS():
     st.dataframe(cm)
 
 # 
-# 
+# Is r/depression classifier
 # 
     
-    loaded_model = pickle.load(open('./PorterStemmer/Models/finalized_model_is_depression.sav', 'rb'))
+    loaded_model = pickle.load(open('./../PorterStemmer/Models/finalized_model_is_depression.sav', 'rb'))
 
-    allPosts = pd.read_csv('./PorterStemmer/all_posts_processed.csv')
-    posts_all = list(zip(allPosts.loc[:,"Post_Parsed"].values,allPosts.loc[:,"Is_Depression_Code"].values))
-    featuresets = [(find_features_PS(str(text)), label) for (text, label) in posts_all]
-    seed = 1
-    training, testing = model_selection.train_test_split(featuresets, test_size = 0.25, random_state=seed)
+    # read saved testing data
+    with open('./../PorterStemmer/Models/testing_depression.data', 'rb') as filehandle:
+        testing = pickle.load(filehandle)
     txt_features, labels = list(zip(*testing))
     
     accuracy = nltk.classify.accuracy(loaded_model, testing)*100
