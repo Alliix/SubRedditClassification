@@ -220,12 +220,16 @@ def show_predict_page():
         depressionResult_PS = classifyDepression_PS(post)
 
         st.header('Using Porter Stemmer:')
-        st.subheader('Subreddit classifier: Post is likely from '+ classifyResult_PS)
-        st.subheader('Is r/depression post: Post is likely '+ depressionResult_PS)
+        st.subheader('Subreddit classifier:')
+        st.write('Post is likely from '+ classifyResult_PS)
+        st.subheader('Is r/depression post:')
+        st.write('Post is likely '+ depressionResult_PS)
 
         classifyResult_LM = classifySubreddit_LM(post)
         depressionResult_LM = classifyDepression_LM(post)
 
         st.header('Using WordNetLemmatizer:')
-        st.subheader('Subreddit classifier: Post is likely from '+ classifyResult_LM)
-        st.subheader('Is r/depression post: Post is likely '+ depressionResult_LM)
+        st.subheader('Subreddit classifier:')
+        st.write('Post is likely from '+ classifyResult_LM)
+        st.subheader('Is r/depression post:')
+        st.write('Post is likely '+ depressionResult_LM)
