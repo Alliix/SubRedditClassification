@@ -1,7 +1,7 @@
 # SubRedditClassification
 
 ## Contains trained models for subreddit classification. 
-- Classifies a post to one of four subreddits (**r/depression**, **r/lonely**, **r/unpopularopinion**, **r/Machine learning**);
+- Classifies a post to one of four subreddits (**r/depression**, **r/lonely**, **r/unpopularopinion**, **r/MachineLearning**);
 - Classifies whether a post belongs to **r/depression**.
 
 ### Models were trained:
@@ -16,5 +16,5 @@ Contains scraped posts from Reddit from the four subreddits and a file with all 
 #### App folder
 Contains the Streamlit app with post classifier page, the four subreddit exploration page (using WordNetLemmatizer) and exploration page for the three models.
 #### To run the App
-`cd App`
+`cd App` <br>
 `streamlit run App.py`
