@@ -6,7 +6,7 @@
 
 ### Models were trained:
 - Using **no normalization**
-- Using the **Porter Stemmer****
+- Using the **Porter Stemmer**
 - Using **WordNetLemmatizer**
 
 Appropriately named folders contain the models. Each folder contains **CleanDataAndTrainModel** file with all posts processing and model training. **ClassifyFunction** contains function for classifying one post with the models. Training, testing  data and trained models are in **/Model**
