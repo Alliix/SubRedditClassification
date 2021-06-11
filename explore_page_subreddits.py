@@ -40,7 +40,7 @@ def show_explore_page_subreddits():
         st.header(subreddit['title'])
         freqWords = getWordFrequency(subreddit['file'])
         st.write('Number of words: {}'.format(len(freqWords)))
-        st.write('Most common words: {}'.format(freqWords.most_common(50)))
+        st.write('100 most common words: {}'.format(freqWords.most_common(100)))
 
         data_analysis = freqWords
         filter_words = dict([(m, n) for m, n in data_analysis.items() if len(m) > 2])
