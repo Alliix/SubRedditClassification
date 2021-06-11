@@ -22,3 +22,5 @@ Main directory contains the Streamlit app with post classifier page, the four su
 
 #### To run the App
 > **streamlit run streamlit_app.py**
+
+App also deployed to [https://share.streamlit.io/alliix/subredditclassification/main](https://share.streamlit.io/alliix/subredditclassification/main)
