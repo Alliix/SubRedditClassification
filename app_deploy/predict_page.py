@@ -30,7 +30,7 @@ def cleanPost(post):
     cleanPost = leadTrailWhitespace.sub('',cleanPost)
     
     # stop words
-    with open('./../stop_words_no_punct.data', 'rb') as filehandle:
+    with open('/app/subredditclassification/stop_words_no_punct.data', 'rb') as filehandle:
         # read the data as binary data stream
         stop_words_no_punct = pickle.load(filehandle)
         
@@ -49,7 +49,7 @@ def find_features_NN(post):
     features = {}
     
     #read generated features for Lemmatizer
-    with open('./../NoNormalization/word_features.data', 'rb') as filehandle:
+    with open('/app/subredditclassification/NoNormalization/word_features.data', 'rb') as filehandle:
         # read the data as binary data stream
         word_features = pickle.load(filehandle)
     
@@ -58,7 +58,7 @@ def find_features_NN(post):
     return features
 
 def classifySubreddit_NN(post):
-    modelFile = './../NoNormalization/Models/finalized_model_subreddits.sav'
+    modelFile = '/app/subredditclassification/NoNormalization/Models/finalized_model_subreddits.sav'
     post = cleanPost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -70,7 +70,7 @@ def classifySubreddit_NN(post):
     return transformSubreddit(result)
 
 def classifyDepression_NN(post):
-    modelFile = './../NoNormalization/Models/finalized_model_is_depression.sav'
+    modelFile = '/app/subredditclassification/NoNormalization/Models/finalized_model_is_depression.sav'
     post = cleanPost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -122,7 +122,7 @@ def cleanStemPost(post):
     cleanPost = stemmed_post
     
     # stop words
-    with open('./../stop_words_no_punct.data', 'rb') as filehandle:
+    with open('/app/subredditclassification/stop_words_no_punct.data', 'rb') as filehandle:
         # read the data as binary data stream
         stop_words_no_punct = pickle.load(filehandle)
         
@@ -141,7 +141,7 @@ def find_features_PS(post):
     features = {}
     
     #read generated features for PS
-    with open('./../PorterStemmer/word_features.data', 'rb') as filehandle:
+    with open('/app/subredditclassification/PorterStemmer/word_features.data', 'rb') as filehandle:
         # read the data as binary data stream
         word_features = pickle.load(filehandle)
     
@@ -166,7 +166,7 @@ def transformDepression(x):
     return switcher.get(x)
 
 def classifySubreddit_PS(post):
-    modelFile = './../PorterStemmer/Models/finalized_model_subreddits.sav'
+    modelFile = '/app/subredditclassification/PorterStemmer/Models/finalized_model_subreddits.sav'
     post = cleanStemPost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -178,7 +178,7 @@ def classifySubreddit_PS(post):
     return transformSubreddit(result)
 
 def classifyDepression_PS(post):
-    modelFile = './../PorterStemmer/Models/finalized_model_is_depression.sav'
+    modelFile = '/app/subredditclassification/PorterStemmer/Models/finalized_model_is_depression.sav'
     post = cleanStemPost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -230,7 +230,7 @@ def cleanLemmatizePost(post):
     cleanPost = lemmatized_post
     
     # stop words
-    with open('./../stop_words_no_punct.data', 'rb') as filehandle:
+    with open('/app/subredditclassification/stop_words_no_punct.data', 'rb') as filehandle:
         # read the data as binary data stream
         stop_words_no_punct = pickle.load(filehandle)
         
@@ -249,7 +249,7 @@ def find_features_LM(post):
     features = {}
     
     #read generated features for Lemmatizer
-    with open('./../WordNetLemmatizer/word_features.data', 'rb') as filehandle:
+    with open('/app/subredditclassification/WordNetLemmatizer/word_features.data', 'rb') as filehandle:
         # read the data as binary data stream
         word_features = pickle.load(filehandle)
     
@@ -258,7 +258,7 @@ def find_features_LM(post):
     return features
 
 def classifySubreddit_LM(post):
-    modelFile = './../WordNetLemmatizer/Models/finalized_model_subreddits.sav'
+    modelFile = '/app/subredditclassification/WordNetLemmatizer/Models/finalized_model_subreddits.sav'
     post = cleanLemmatizePost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
@@ -270,7 +270,7 @@ def classifySubreddit_LM(post):
     return transformSubreddit(result)
 
 def classifyDepression_LM(post):
-    modelFile = './../WordNetLemmatizer/Models/finalized_model_is_depression.sav'
+    modelFile = '/app/subredditclassification/WordNetLemmatizer/Models/finalized_model_is_depression.sav'
     post = cleanLemmatizePost(post)
     
     loaded_model = pickle.load(open(modelFile, 'rb'))
