@@ -5,6 +5,9 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
+nltk.download('punkt')
+nltk.download('wordnet')
+
 # 
 # NO NORMALIZATION
 # 
