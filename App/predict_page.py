@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import re
+import os
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
@@ -33,7 +34,8 @@ def cleanPost(post):
     cleanPost = leadTrailWhitespace.sub('',cleanPost)
     
     # stop words
-    with open('./../stop_words_no_punct.data', 'rb') as filehandle:
+    path = os.path.dirname(__file__)
+    with open(path+'\..\stop_words_no_punct.data', 'rb') as filehandle:
         # read the data as binary data stream
         stop_words_no_punct = pickle.load(filehandle)
         
