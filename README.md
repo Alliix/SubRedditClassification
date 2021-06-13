@@ -14,9 +14,6 @@ Appropriately named folders contain the models. Each folder contains **CleanData
 ####  Data folder
 Contains scraped posts from Reddit from the four subreddits and a file with all posts combined.
 
-#### PostProcessingStepByStep folder
-Contains an example post processed using three normalization ways to compare.
-
 #### The app 
 Main directory contains the Streamlit app with post classifier page, the four subreddit exploration page (using WordNetLemmatizer) and exploration page for the three models.
 
