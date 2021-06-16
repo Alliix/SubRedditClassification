@@ -38,8 +38,8 @@ def show_explore_page_LM():
     st.subheader("Subreddit Voting Classifier: Accuracy: {}".format(accuracy))
 
     prediction = loaded_model.classify_many(txt_features)
-    report = classification_report(labels, prediction)
-    st.write(report)
+    report = classification_report(labels, prediction, target_names=['depression', 'unpopularopinion', 'lonely', 'MachineLearning'])
+    st.text('Model Report:\n ' + report)
 
     cm = pd.DataFrame(
     confusion_matrix(labels, prediction),
@@ -63,8 +63,8 @@ def show_explore_page_LM():
     st.subheader("r/depression Voting Classifier: Accuracy: {}".format(accuracy))
     
     prediction = loaded_model.classify_many(txt_features)
-    report = classification_report(labels, prediction)
-    st.write(report)
+    report = classification_report(labels, prediction, target_names=['depression', 'not r/depression'])
+    st.text('Model Report:\n ' + report)
 
     cm = pd.DataFrame(
     confusion_matrix(labels, prediction),
